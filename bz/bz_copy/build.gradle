@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+apply from: '../../common.gradle'
+
+
+
+
+dependencies {
+    implementation project(':bz:bz_base')
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+}

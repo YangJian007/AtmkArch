@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_26"
+        android:layout_marginVertical="@dimen/dp_10"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_iot_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="流量" />
+
+        <TextView
+            android:id="@+id/tv_iot_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            tools:text="1.41m³/s" />
+
+        <TextView
+            android:id="@+id/tv_iot_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            tools:text="监测时间：3-3-3" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:src="@drawable/arrows_right_ic" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_1"
+        android:layout_alignParentBottom="true"
+        android:background="#666666" />
+
+</RelativeLayout>

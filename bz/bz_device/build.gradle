@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+apply from: '../../common.gradle'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+
+dependencies {
+    implementation project(':bz:bz_base')
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    //表格：https://github.com/huangyanbin/smartTable
+    implementation 'com.github.huangyanbin:SmartTable:2.2.0'
+    //图表：https://github.com/PhilJay/MPAndroidChart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    //ocr_ui
+    implementation project(':library:ocr_ui')
+}

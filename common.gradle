@@ -1,0 +1,110 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'android-aspectjx'
+
+// 通用配置
+android {
+
+    // 编译源码版本
+    compileSdkVersion 30
+    defaultConfig {
+        // 最低安装版本
+        minSdkVersion 21
+        // 目标适配版本
+        targetSdkVersion 30
+        versionName '1.0'
+        versionCode 10
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+
+
+    }
+
+    // 支持 Java JDK 8
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    // 设置存放 so 文件的目录
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    // 可在 Studio 最左侧中的 Build Variants 选项中切换默认的构建类型
+    buildTypes {
+        // 调试版本
+        debug {}
+        // 预览版本
+        preview {}
+        // 正式版本
+        release {}
+    }
+
+    // 代码警告配置
+    lintOptions {
+        // 禁用文本硬编码警告
+        disable 'HardcodedText'
+        // 禁用图片描述警告
+        disable 'ContentDescription'
+    }
+
+    // AOP 配置（exclude 和 include 二选一）
+    // 需要进行配置，否则就会引发冲突，具体表现为：
+    // 第一种：编译不过去，报错：java.util.zip.ZipException：Cause: zip file is empty
+    // 第二种：编译能过去，但运行时报错：ClassNotFoundException: Didn't find class on path: DexPathList
+    aspectjx {
+        // 排除一些第三方库的包名（Gson、 LeakCanary 和 AOP 有冲突）
+//        exclude 'androidx', 'com.google',
+//                'com.squareup', 'org.apache',
+//                'com.alipay', 'com.taobao',
+//                'versions.9','com.alibaba'
+        // 只对以下包名做 AOP 处理
+//                include android.defaultConfig.applicationId
+                include 'com.atmk.iot',
+                        'com.atmk.base',
+                        'com.atmk.iot.bz_device',
+                        'com.atmk.iot.bz_login'
+
+
+    }
+
+}
+
+afterEvaluate {
+    // 前提条件是这个 Module 工程必须是 Library 类型，并且排除名为 umeng 的 Module 工程
+    if (android.defaultConfig.applicationId == null && "umeng" != getName()) {
+        // 排除 BuildConfig.class
+        generateReleaseBuildConfig.enabled = false
+        generatePreviewBuildConfig.enabled = false
+        generateDebugBuildConfig.enabled = false
+    }
+}
+
+dependencies {
+    // 依赖 libs 目录下所有的 jar 和 aar 包
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+
+    // AndroidX 库：https://github.com/androidx/androidx
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    // Material 库：https://github.com/material-components/material-components-android
+    implementation 'com.google.android.material:material:1.4.0'
+
+    // Kotlin 协程：https://github.com/Kotlin/kotlinx.coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+
+
+}

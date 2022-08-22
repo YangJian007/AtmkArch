@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:layoutAnimation="@anim/layout_from_bottom"
+    android:orientation="vertical"
+    tools:context=".ui.activity.LoginActivity"
+    tools:layoutAnimation="@null">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        app:barStyle="transparent"
+        app:leftIcon="@null"
+        app:rightBackground="@null"
+        app:rightTitleColor="@color/common_accent_color"
+        app:rightTitleSize="@dimen/sp_14"
+        app:title="" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_login_logo"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginVertical="@dimen/dp_10"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/iv_login_logo"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="@dimen/dp_200"-->
+    <!--        android:background="@mipmap/ic_back_title_background" />-->
+
+    <LinearLayout
+        android:id="@+id/ll_login_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.hjq.widget.view.ClearEditText
+            android:id="@+id/et_login_name"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_10"
+            android:hint="@string/common_username_input_hint"
+            android:inputType="text"
+            android:singleLine="true"
+            app:regexType="name" />
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_marginHorizontal="@dimen/dp_40" />
+
+        <com.hjq.widget.view.PasswordEditText
+            android:id="@+id/et_login_password"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:hint="@string/common_password_input_error"
+            android:imeOptions="actionDone"
+            android:maxLength="20"
+            android:singleLine="true" />
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_marginHorizontal="@dimen/dp_40" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_40"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp_15">
+
+            <com.hjq.widget.view.RegexEditText
+                android:id="@+id/et_version_code"
+                style="@style/EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:hint="@string/common_code_input_hint"
+                android:maxLength="4"
+                app:regexType="nonnull" />
+
+            <ImageView
+                android:id="@+id/iv_version_code"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:src="@mipmap/ic_see_bt" />
+
+        </LinearLayout>
+
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_marginHorizontal="@dimen/dp_40" />
+
+
+        <com.hjq.widget.view.SubmitButton
+            android:id="@+id/btn_login_commit"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="@string/login_text"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_login_bg" />
+
+</LinearLayout>

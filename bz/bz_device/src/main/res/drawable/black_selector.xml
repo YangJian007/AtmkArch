@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 白色背景按压效果样式 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners android:radius="@dimen/dp_88"/>
+    <solid android:color="#000000"/>
+<!--    <stroke android:color="#999999" android:width="0.5dp"></stroke>-->
+
+</shape>

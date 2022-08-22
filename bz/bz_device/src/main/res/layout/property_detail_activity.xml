@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="属性详情" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:orientation="horizontal">
+
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginVertical="@dimen/dp_10"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/arrows_bottom_ic"
+            android:gravity="center"
+            android:paddingRight="@dimen/dp_10"
+            app:shape="rectangle"
+            app:shape_bottomLeftRadius="@dimen/dp_10"
+            app:shape_solidColor="@color/white"
+            app:shape_strokeColor="#E5E5E5"
+            app:shape_strokeWidth="@dimen/dp_1"
+            app:shape_topLeftRadius="@dimen/dp_10"
+            tools:text="2022-02-01" />
+
+
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/tv_end_time"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginVertical="@dimen/dp_10"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/arrows_bottom_ic"
+            android:gravity="center"
+            android:paddingRight="@dimen/dp_10"
+            app:shape="rectangle"
+            app:shape_bottomRightRadius="@dimen/dp_10"
+            app:shape_solidColor="@color/white"
+            app:shape_strokeColor="#E5E5E5"
+            app:shape_strokeWidth="@dimen/dp_1"
+            app:shape_topRightRadius="@dimen/dp_10"
+            tools:text="2022-02-01" />
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:itemCount="2"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/tab_item_design"
+        tools:spanCount="2" />
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/tl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:layout_marginVertical="@dimen/dp_10"
+        app:tl_bar_color="#F0F0F0"
+        app:tl_indicator_anim_enable="true"
+        app:tl_indicator_bounce_enable="false"
+        app:tl_indicator_color="@color/white"
+        app:tl_indicator_margin_bottom="@dimen/dp_3"
+        app:tl_indicator_margin_left="@dimen/dp_3"
+        app:tl_indicator_margin_right="@dimen/dp_3"
+        app:tl_indicator_margin_top="@dimen/dp_3"
+        app:tl_tab_space_equal="true"
+        app:tl_textSelectColor="@color/black"
+        app:tl_textUnselectColor="@color/black" />
+
+    <com.hjq.widget.layout.NoScrollViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
