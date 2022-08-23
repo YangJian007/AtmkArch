@@ -21,7 +21,7 @@ import com.atmk.base.app.AppActivity
 class ScanActivity : AppActivity(), QRCodeView.Delegate {
     private val mZBarView: ZBarView? by lazy { findViewById(R.id.zbarview) }
     override fun getLayoutId(): Int {
-        return R.layout.scan_activity
+        return R.layout.device_scan_activity
     }
 
     override fun initView() {

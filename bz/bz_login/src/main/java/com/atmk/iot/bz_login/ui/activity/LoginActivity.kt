@@ -16,7 +16,6 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.launcher.ARouter
 import com.atmk.iot.bz_login.R
 import com.atmk.base.aop.Log
 import com.atmk.base.aop.SingleClick
@@ -76,7 +75,7 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
     private val animTime: Int = 300
 
     override fun getLayoutId(): Int {
-        return R.layout.login_activity
+        return R.layout.login_login_activity
     }
 
     override fun initView() {

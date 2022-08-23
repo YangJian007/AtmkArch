@@ -38,7 +38,7 @@ class DeviceDetailActivity : AppActivity(), TabAdapter.OnTabListener,
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.device_detail_activity
+        return R.layout.device_device_detail_activity
     }
 
     private val tabView: RecyclerView? by lazy { findViewById(R.id.rv_tab) }
@@ -56,7 +56,7 @@ class DeviceDetailActivity : AppActivity(), TabAdapter.OnTabListener,
         }
         viewPager?.adapter = pagerAdapter
         viewPager?.addOnPageChangeListener(this)
-        tabAdapter = TabAdapter(this, fixTabLayoutId = R.layout.tab_item_design_device_detail)
+        tabAdapter = TabAdapter(this, fixTabLayoutId = R.layout.device_tab_item_design_device_detail)
         tabView?.adapter = tabAdapter
     }
 

@@ -1,12 +1,10 @@
 <resources>
 
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="start_date_title">请选择开始日期</string>
-    <string name="end_date_title">请选择结束日期</string>
+    <string name="device_start_date_title">请选择开始日期</string>
+    <string name="device_end_date_title">请选择结束日期</string>
 
-    <string name="station_name_hint">搜索设备名称</string>
+    <string name="device_station_name_hint">搜索设备名称</string>
 
 </resources>

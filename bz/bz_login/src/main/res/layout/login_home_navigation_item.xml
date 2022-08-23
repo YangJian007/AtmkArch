@@ -13,7 +13,7 @@
         android:id="@+id/iv_home_navigation_icon"
         android:layout_width="@dimen/dp_22"
         android:layout_height="@dimen/dp_22"
-        tools:srcCompat="@drawable/home_home_selector" />
+        tools:srcCompat="@drawable/login_home_home_selector" />
 
     <com.hjq.shape.view.ShapeTextView
         android:id="@+id/tv_home_navigation_title"

@@ -38,7 +38,7 @@ class DeviceAdapter(context1: Context, homeFragment: HomeFragment) : AppAdapter<
         return ViewHolder()
     }
 
-    inner class ViewHolder : AppViewHolder(R.layout.device_item) {
+    inner class ViewHolder : AppViewHolder(R.layout.device_device_item) {
         private val imageView: AppCompatImageView? by lazy { findViewById(R.id.aiv_device) }
         private val atvDeviceName: AppCompatTextView? by lazy { findViewById(R.id.atv_device_name) }
         private val atvProductName: AppCompatTextView? by lazy { findViewById(R.id.atv_product_name) }
@@ -62,24 +62,24 @@ class DeviceAdapter(context1: Context, homeFragment: HomeFragment) : AppAdapter<
             if (bean?.state?.value.equals("online")) {
                 atvDeviceStatus?.setTextColor(Color.parseColor("#16B86A"))
                 atvDeviceStatus?.setText("在线")
-                imageView?.setImageResource(R.mipmap.ic_inline1)
-                atvDeviceStatus?.setBackgroundResource(R.drawable.bg_in_status)
+                imageView?.setImageResource(R.mipmap.device_ic_inline1)
+                atvDeviceStatus?.setBackgroundResource(R.drawable.device_bg_in_status)
                 atvClose?.visibility= View.VISIBLE
                 llOpen?.visibility = View.GONE
             }
             else if(bean?.state?.value.equals("offline")) {
                 atvDeviceStatus?.setTextColor(Color.parseColor("#333333"))
                 atvDeviceStatus?.setText("离线")
-                imageView?.setImageResource(R.mipmap.ic_offline1)
-                atvDeviceStatus?.setBackgroundResource(R.drawable.bg_status)
+                imageView?.setImageResource(R.mipmap.device_ic_offline1)
+                atvDeviceStatus?.setBackgroundResource(R.drawable.device_bg_status)
                 atvClose?.visibility= View.VISIBLE
                 llOpen?.visibility = View.GONE
             } else {
 //                notActive
                 atvDeviceStatus?.setTextColor(Color.parseColor("#333333"))
                 atvDeviceStatus?.setText("未启用")
-                imageView?.setImageResource(R.mipmap.ic_offline1)
-                atvDeviceStatus?.setBackgroundResource(R.drawable.bg_status)
+                imageView?.setImageResource(R.mipmap.device_ic_offline1)
+                atvDeviceStatus?.setBackgroundResource(R.drawable.device_bg_status)
                 atvClose?.visibility= View.GONE
                 llOpen?.visibility = View.VISIBLE
             }

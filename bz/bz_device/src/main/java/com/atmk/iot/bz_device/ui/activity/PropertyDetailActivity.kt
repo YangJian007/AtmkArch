@@ -59,7 +59,7 @@ class PropertyDetailActivity : AppActivity(), TabAdapter.OnTabListener,
     }
 
 
-    override fun getLayoutId() = R.layout.property_detail_activity
+    override fun getLayoutId() = R.layout.device_property_detail_activity
 
     private val tabLayout: SegmentTabLayout? by lazy { findViewById(R.id.tl) }
     private val tabView: RecyclerView? by lazy { findViewById(R.id.rv_tab) }
@@ -156,7 +156,7 @@ class PropertyDetailActivity : AppActivity(), TabAdapter.OnTabListener,
             R.id.tv_start_time -> {
                 //开始时间
                 DateDialog.Builder(this, 2020)
-                    .setTitle(getString(R.string.start_date_title))
+                    .setTitle(getString(R.string.device_start_date_title))
                     .setListener(object : DateDialog.OnListener {
                         override fun onSelected(
                             dialog: BaseDialog?,
@@ -181,7 +181,7 @@ class PropertyDetailActivity : AppActivity(), TabAdapter.OnTabListener,
             R.id.tv_end_time -> {
                 //结束时间
                 DateDialog.Builder(this, 2020)
-                    .setTitle(getString(R.string.end_date_title))
+                    .setTitle(getString(R.string.device_end_date_title))
                     .setListener(object : DateDialog.OnListener {
                         override fun onSelected(
                             dialog: BaseDialog?,

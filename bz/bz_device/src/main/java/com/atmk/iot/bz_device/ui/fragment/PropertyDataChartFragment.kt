@@ -55,7 +55,7 @@ class PropertyDataChartFragment : TitleBarFragment<AppActivity>(),
         propertyDetailActivity.mDataCallBacks.add(this)
     }
 
-    override fun getLayoutId() = R.layout.property_data_chart_fragment
+    override fun getLayoutId() = R.layout.device_property_data_chart_fragment
 
 
     private val lineChart: LineChart? by lazy { findViewById(R.id.chart) }
@@ -172,7 +172,7 @@ class PropertyDataChartFragment : TitleBarFragment<AppActivity>(),
         lineChart!!.setBackgroundColor(Color.WHITE)
         lineChart!!.extraBottomOffset=10f
         // create marker to display box when values are selected
-        val mv = MyMarkerView(activity, R.layout.custom_marker_view)
+        val mv = MyMarkerView(activity, R.layout.device_custom_marker_view)
         // Set the marker to the chart
         mv.setChartView(lineChart)
         lineChart!!.marker = mv

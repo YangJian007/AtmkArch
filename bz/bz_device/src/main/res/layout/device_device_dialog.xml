@@ -17,7 +17,7 @@
         <com.hjq.bar.TitleBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:leftIcon="@mipmap/ic_back"
+            app:leftIcon="@mipmap/device_ic_back"
             android:id="@+id/tb_title"/>
 
         <View
@@ -93,10 +93,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/black_selector"
+                android:background="@drawable/device_black_selector"
                 android:paddingLeft="@dimen/dp_8"
                 android:layout_marginLeft="@dimen/dp_5"
-                android:drawableLeft="@mipmap/ic_zbar"
+                android:drawableLeft="@mipmap/device_ic_zbar"
                 android:paddingRight="@dimen/dp_15"
                 android:textColor="@color/white"
                 android:gravity="center"
@@ -165,8 +165,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/white_selector"
-                android:drawableRight="@mipmap/ic_select"
+                android:background="@drawable/device_white_selector"
+                android:drawableRight="@mipmap/device_ic_select"
                 android:hint="选择产品" />
         </RelativeLayout>
 
@@ -257,7 +257,7 @@
                 android:paddingTop="@dimen/dp_10"
                android:layout_centerInParent="true"
                 android:paddingBottom="@dimen/dp_10"
-                android:background="@drawable/bg_status"
+                android:background="@drawable/device_bg_status"
                 android:layout_marginLeft="@dimen/dp_20"
                 android:textColor="@color/white"
                 android:id="@+id/tv_cancle"/>
@@ -277,7 +277,7 @@
                 android:paddingLeft="@dimen/dp_20"
                 android:paddingTop="@dimen/dp_10"
                 android:paddingBottom="@dimen/dp_10"
-                android:background="@drawable/bg_in_status"
+                android:background="@drawable/device_bg_in_status"
                 android:id="@+id/tv_commit"/>
 
         </LinearLayout>

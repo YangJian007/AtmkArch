@@ -71,7 +71,7 @@ class NavigationAdapter constructor(context: Context) :
         }
     }
 
-    inner class ViewHolder : AppViewHolder(R.layout.home_navigation_item) {
+    inner class ViewHolder : AppViewHolder(R.layout.login_home_navigation_item) {
 
         private val iconView: ImageView? by lazy { findViewById(R.id.iv_home_navigation_icon) }
         private val titleView: TextView? by lazy { findViewById(R.id.tv_home_navigation_title) }

@@ -15,6 +15,7 @@ android {
         resConfigs 'xxhdpi'
         // 混淆配置
         proguardFiles 'proguard-sdk.pro', 'proguard-app.pro'
+
     }
 
     // Apk 签名的那些事：https://www.jianshu.com/p/a1f8e5896aa2

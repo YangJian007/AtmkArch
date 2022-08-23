@@ -30,7 +30,7 @@ open class VideoPlayActivity : AppActivity(), PlayerView.OnPlayListener {
     private var builder: Builder? = null
 
     override fun getLayoutId(): Int {
-        return R.layout.video_play_activity
+        return R.layout.device_video_play_activity
     }
 
     override fun initView() {

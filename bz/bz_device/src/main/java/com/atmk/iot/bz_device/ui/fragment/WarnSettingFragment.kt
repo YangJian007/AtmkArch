@@ -17,7 +17,7 @@ class WarnSettingFragment : TitleBarFragment<AppActivity>() {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.warn_setting_fragment
+        return R.layout.device_warn_setting_fragment
     }
 
     override fun initView() {}

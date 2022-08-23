@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/MatchMatch">
+    style="@style/device_MatchMatch">
 
     <cn.bingoogolapple.qrcode.zbar.ZBarView
         android:id="@+id/zbarview"
-        style="@style/WrapWrap"
+        style="@style/device_WrapWrap"
         app:qrcv_animTime="1000"
         app:qrcv_barCodeTipText="将条码放入框内，即可自动扫描"
         app:qrcv_barcodeRectHeight="140dp"

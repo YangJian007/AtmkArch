@@ -43,7 +43,7 @@ class DeviceFunFragment : TitleBarFragment<AppActivity>(), FunctionInputAdapter.
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.device_fun_fragment1
+        return R.layout.device_device_fun_fragment1
     }
 
 

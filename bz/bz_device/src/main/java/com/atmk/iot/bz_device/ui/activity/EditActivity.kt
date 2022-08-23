@@ -90,7 +90,7 @@ class EditActivity : AppActivity() {
     private var product: String? = null
 
     override fun getLayoutId(): Int {
-        return R.layout.device_dialog
+        return R.layout.device_device_dialog
     }
 
     override fun initView() {

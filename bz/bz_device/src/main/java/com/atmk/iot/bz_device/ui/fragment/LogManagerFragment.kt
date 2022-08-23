@@ -17,7 +17,7 @@ class LogManagerFragment : TitleBarFragment<AppActivity>() {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.log_manager_fragment
+        return R.layout.device_log_manager_fragment
     }
 
     override fun initView() {}

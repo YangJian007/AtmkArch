@@ -26,12 +26,12 @@
     <!-- Application 节点详解：https://developer.android.google.cn/guide/topics/manifest/application-element -->
     <!-- Activity 节点详解：https://developer.android.google.cn/guide/topics/manifest/activity-element -->
     <application
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/base_ic_launcher"
         android:label="${app_name}"
         android:networkSecurityConfig="@xml/network_security_config"
         android:requestLegacyExternalStorage="true"
         android:resizeableActivity="true"
-        android:roundIcon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/base_ic_launcher"
 
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,LockedOrientationActivity"

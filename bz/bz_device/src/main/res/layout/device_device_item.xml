@@ -7,7 +7,7 @@
     android:layout_marginRight="@dimen/dp_16"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/white_selector"
+    android:background="@drawable/device_white_selector"
     android:layout_margin="@dimen/dp_5"
     android:orientation="horizontal">
 
@@ -16,7 +16,7 @@
         android:layout_marginLeft="@dimen/dp_16"
         android:layout_width="@dimen/dp_30"
         android:layout_height="@dimen/dp_30"
-        android:src="@mipmap/ic_inline1"
+        android:src="@mipmap/device_ic_inline1"
         android:id="@+id/aiv_device"/>
 
   <LinearLayout
@@ -34,7 +34,7 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:textSize="@dimen/dp_12"
-             android:background="@drawable/bg_status"
+             android:background="@drawable/device_bg_status"
              android:paddingLeft="@dimen/dp_10"
              android:paddingRight="@dimen/dp_10"
              android:paddingTop="@dimen/dp_3"
@@ -97,7 +97,7 @@
               android:layout_gravity="center"
               android:gravity="center"
               android:textSize="@dimen/dp_12"
-              android:drawableLeft="@mipmap/ic_play"
+              android:drawableLeft="@mipmap/device_ic_play"
               android:textColor="#666666"/>
           <androidx.appcompat.widget.AppCompatTextView
               android:id="@+id/atv_edit"
@@ -108,7 +108,7 @@
               android:layout_gravity="center"
               android:gravity="center"
               android:textSize="@dimen/dp_12"
-              android:drawableLeft="@mipmap/ic_edit"
+              android:drawableLeft="@mipmap/device_ic_edit"
               android:textColor="#666666"/>
        <LinearLayout
            android:id="@+id/ll_open"
@@ -126,7 +126,7 @@
                android:gravity="center"
                android:text="启用"
                android:textSize="@dimen/dp_12"
-               android:drawableLeft="@mipmap/ic_play"
+               android:drawableLeft="@mipmap/device_ic_play"
                android:textColor="#666666"/>
            <androidx.appcompat.widget.AppCompatTextView
                android:id="@+id/atv_del"
@@ -137,7 +137,7 @@
                android:textSize="@dimen/dp_12"
                android:layout_gravity="center"
                android:gravity="center"
-               android:drawableLeft="@mipmap/ic_del"
+               android:drawableLeft="@mipmap/device_ic_del"
                android:textColor="#666666"/>
        </LinearLayout>
           <androidx.appcompat.widget.AppCompatTextView
@@ -149,7 +149,7 @@
               android:textSize="@dimen/dp_12"
               android:layout_gravity="center"
               android:gravity="center"
-              android:drawableLeft="@mipmap/ic_disable"
+              android:drawableLeft="@mipmap/device_ic_disable"
               android:textColor="#666666"/>
       </LinearLayout>
   </LinearLayout>

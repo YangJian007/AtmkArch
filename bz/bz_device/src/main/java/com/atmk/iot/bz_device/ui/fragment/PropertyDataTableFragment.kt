@@ -66,7 +66,7 @@ class PropertyDataTableFragment : TitleBarFragment<AppActivity>(),
         propertyDetailActivity.mDataCallBacks.add(this)
     }
 
-    override fun getLayoutId() = R.layout.property_data_table_fragment
+    override fun getLayoutId() = R.layout.device_property_data_table_fragment
 
     override fun initView() {
         refreshLayout?.setOnRefreshLoadMoreListener(this)

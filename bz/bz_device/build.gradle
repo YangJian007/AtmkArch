@@ -2,6 +2,10 @@ apply plugin: 'com.android.library'
 apply from: '../../common.gradle'
 apply plugin: 'org.jetbrains.kotlin.android'
 
+android {
+    //资源命名加前缀
+    resourcePrefix "device_"
+}
 
 dependencies {
     implementation project(':bz:bz_base')

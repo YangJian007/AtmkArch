@@ -5,9 +5,10 @@
 
     <application android:name="com.atmk.base.app.AppApplication"
         android:label="${app_name}"
+        android:icon="@mipmap/app_ic_launcher"
         android:supportsRtl="false"
         android:allowBackup="false"
         android:theme="@style/base_AppTheme"
-        tools:replace="android:allowBackup,android:label,android:supportsRtl,android:theme" />
+        tools:replace="android:allowBackup,android:label,android:supportsRtl,android:theme,android:icon" />
 
 </manifest>

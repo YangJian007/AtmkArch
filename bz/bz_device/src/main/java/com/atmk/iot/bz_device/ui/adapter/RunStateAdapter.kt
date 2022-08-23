@@ -18,7 +18,7 @@ class RunStateAdapter constructor(context: Context) : AppAdapter<RunStateApi.Bea
         return ViewHolder()
     }
 
-    inner class ViewHolder : AppViewHolder(R.layout.item_iotdetail_paralist) {
+    inner class ViewHolder : AppViewHolder(R.layout.device_item_iotdetail_paralist) {
 
         private val tvName: TextView? by lazy { findViewById(R.id.tv_iot_name) }
         private val tvValue: TextView? by lazy { findViewById(R.id.tv_iot_value) }

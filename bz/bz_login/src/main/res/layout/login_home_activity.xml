@@ -24,6 +24,6 @@
         app:spanCount="4"
         tools:itemCount="4"
         tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/home_navigation_item" />
+        tools:listitem="@layout/login_home_navigation_item" />
 
 </LinearLayout>

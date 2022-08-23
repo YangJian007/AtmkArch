@@ -1,12 +1,9 @@
 package com.atmk.iot.bz_login.ui.activity
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.launcher.ARouter
@@ -46,15 +43,15 @@ class HomeActivity : AppActivity(), NavigationAdapter.OnNavigationListener {
     private var navigationAdapter: NavigationAdapter? = null
     private var pagerAdapter: FragmentPagerAdapter<AppFragment<*>>? = null
     override fun getLayoutId(): Int {
-        return R.layout.home_activity
+        return R.layout.login_home_activity
     }
 
     override fun initView() {
         navigationAdapter = NavigationAdapter(this).apply {
-            addItem(NavigationAdapter.MenuItem(getString(R.string.home_nav_equipment),
-                    ContextCompat.getDrawable(this@HomeActivity, R.drawable.home_home_selector)))
-            addItem(NavigationAdapter.MenuItem(getString(R.string.home_nav_statistics),
-                    ContextCompat.getDrawable(this@HomeActivity, R.drawable.home_found_selector)))
+            addItem(NavigationAdapter.MenuItem(getString(R.string.login_home_nav_equipment),
+                    ContextCompat.getDrawable(this@HomeActivity, R.drawable.login_home_home_selector)))
+            addItem(NavigationAdapter.MenuItem(getString(R.string.login_home_nav_statistics),
+                    ContextCompat.getDrawable(this@HomeActivity, R.drawable.login_home_found_selector)))
             setOnNavigationListener(this@HomeActivity)
             navigationView?.adapter = this
         }

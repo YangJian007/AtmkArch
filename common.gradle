@@ -1,6 +1,7 @@
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'android-aspectjx'
+//apply plugin: 'CheckResourcePrefixPlugin'
 
 // 通用配置
 android {

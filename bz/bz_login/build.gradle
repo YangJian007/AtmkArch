@@ -1,7 +1,11 @@
-apply plugin : 'com.android.library'
-apply from : '../../common.gradle'
+apply plugin: 'com.android.library'
+apply from: '../../common.gradle'
 
 
+android {
+    //资源命名加前缀
+    resourcePrefix "login_"
+}
 
 dependencies {
     kapt 'com.alibaba:arouter-compiler:1.5.2'

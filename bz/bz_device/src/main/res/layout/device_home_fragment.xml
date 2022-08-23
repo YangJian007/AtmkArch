@@ -38,8 +38,8 @@
             android:textSize="@dimen/dp_12"
             android:imeOptions="actionSend"
             android:paddingLeft="@dimen/dp_10"
-            android:background="@drawable/bg_search"
-            android:hint="@string/station_name_hint"
+            android:background="@drawable/device_bg_search"
+            android:hint="@string/device_station_name_hint"
             android:singleLine="true" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -53,7 +53,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_marginRight="@dimen/dp_10"
-            android:background="@drawable/bg_in_status"
+            android:background="@drawable/device_bg_in_status"
             android:textSize="@dimen/sp_14"
             android:padding="@dimen/dp_10"/>
     </LinearLayout>
@@ -70,7 +70,7 @@
         android:textSize="@dimen/dp_17"
         android:layout_marginLeft="@dimen/dp_10"
         android:padding="@dimen/dp_5"
-        android:drawableRight="@mipmap/ic_drop"/>
+        android:drawableRight="@mipmap/device_ic_drop"/>
 
 
   <androidx.core.widget.NestedScrollView
@@ -83,7 +83,7 @@
           android:orientation="horizontal">
           <LinearLayout
               android:id="@+id/ll_all"
-              android:background="@drawable/bg_home_normal"
+              android:background="@drawable/device_bg_home_normal"
               android:layout_width="0dp"
               android:layout_weight="1"
               android:clickable="true"
@@ -94,7 +94,7 @@
               <androidx.appcompat.widget.AppCompatImageView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:src="@mipmap/ic_sum_normal"
+                  android:src="@mipmap/device_ic_sum_normal"
                   android:layout_marginTop="@dimen/dp_10"
                   android:layout_gravity="center"/>
               <androidx.appcompat.widget.AppCompatTextView
@@ -119,7 +119,7 @@
           <LinearLayout
               android:id="@+id/ll_online"
               android:layout_width="0dp"
-              android:background="@drawable/bg_home_normal"
+              android:background="@drawable/device_bg_home_normal"
               android:layout_weight="1"
               android:layout_marginLeft="@dimen/dp_10"
               android:layout_height="match_parent"
@@ -129,7 +129,7 @@
               <androidx.appcompat.widget.AppCompatImageView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:src="@mipmap/ic_inline"
+                  android:src="@mipmap/device_ic_inline"
                   android:layout_marginTop="@dimen/dp_10"
                   android:layout_gravity="center"/>
               <androidx.appcompat.widget.AppCompatTextView
@@ -154,7 +154,7 @@
           <LinearLayout
               android:id="@+id/ll_offline"
               android:layout_width="0dp"
-              android:background="@drawable/bg_home_normal"
+              android:background="@drawable/device_bg_home_normal"
               android:layout_weight="1"
               android:layout_marginLeft="@dimen/dp_10"
               android:layout_height="match_parent"
@@ -164,7 +164,7 @@
               <androidx.appcompat.widget.AppCompatImageView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:src="@mipmap/ic_offline"
+                  android:src="@mipmap/device_ic_offline"
                   android:layout_marginTop="@dimen/dp_10"
                   android:layout_gravity="center"/>
               <androidx.appcompat.widget.AppCompatTextView
@@ -190,7 +190,7 @@
               android:id="@+id/ll_noAlive"
               android:layout_marginRight="@dimen/dp_10"
               android:layout_width="0dp"
-              android:background="@drawable/bg_home_normal"
+              android:background="@drawable/device_bg_home_normal"
               android:layout_weight="1"
               android:layout_marginLeft="@dimen/dp_10"
               android:layout_height="match_parent"
@@ -200,7 +200,7 @@
               <androidx.appcompat.widget.AppCompatImageView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:src="@mipmap/ic_noalive"
+                  android:src="@mipmap/device_ic_noalive"
                   android:layout_marginTop="@dimen/dp_10"
                   android:layout_gravity="center"/>
               <androidx.appcompat.widget.AppCompatTextView
@@ -242,7 +242,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listCount="2"
-                tools:listitem="@layout/device_item"/>
+                tools:listitem="@layout/device_device_item"/>
         </com.scwang.smart.refresh.layout.SmartRefreshLayout>
     </FrameLayout>
 

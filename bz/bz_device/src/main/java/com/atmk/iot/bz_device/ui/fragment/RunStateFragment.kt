@@ -28,7 +28,7 @@ class RunStateFragment : TitleBarFragment<AppActivity>(), BaseAdapter.OnItemClic
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.run_state_fragment
+        return R.layout.device_run_state_fragment
     }
 
     private val recyclerView: WrapRecyclerView? by lazy { findViewById(R.id.rv) }

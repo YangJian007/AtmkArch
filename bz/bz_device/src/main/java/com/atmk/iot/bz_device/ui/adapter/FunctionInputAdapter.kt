@@ -31,7 +31,7 @@ class FunctionInputAdapter constructor(
         return ViewHolder()
     }
 
-    inner class ViewHolder : AppViewHolder(R.layout.item_function_param) {
+    inner class ViewHolder : AppViewHolder(R.layout.device_item_function_param) {
 
         private val tvKey: TextView? by lazy { findViewById(R.id.tv_key) }
         private val etValue: ShapeEditText? by lazy { findViewById(R.id.et_value) }

@@ -47,7 +47,7 @@ class HomeFragment : TitleBarFragment<AppActivity>(), OnRefreshLoadMoreListener,
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.home_fragment
+        return R.layout.device_home_fragment
     }
 
     private val sbProductType: AppCompatTextView? by lazy { findViewById(R.id.sb_product_type) }
