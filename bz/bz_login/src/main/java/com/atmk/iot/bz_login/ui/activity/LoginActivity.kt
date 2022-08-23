@@ -129,7 +129,7 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
                                 commitView?.showSucceed()
                                 postDelayed({
                                     // 跳转到首页
-                                    toast("登陆成功")
+                                    toast("登录成功")
 //                                    HomeActivity.start(getContext(), HomeFragment::class.java)
                                     startActivity(Intent(this@LoginActivity,HomeActivity::class.java))
                                     finish()

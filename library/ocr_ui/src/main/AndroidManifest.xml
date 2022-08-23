@@ -16,7 +16,7 @@
                  android:icon="@mipmap/ic_launcher"
                  android:supportsRtl="true"
                  android:vmSafeMode="true"
-                 android:theme="@style/AppTheme">
+                 android:theme="@style/ocr_AppTheme">
 
         <activity android:name="com.baidu.ocr.ui.camera.CameraActivity"
                   android:configChanges="screenSize|orientation"

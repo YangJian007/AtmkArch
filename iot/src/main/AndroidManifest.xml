@@ -7,10 +7,7 @@
         android:label="${app_name}"
         android:supportsRtl="false"
         android:allowBackup="false"
-        android:theme="@style/AppTheme"
-        tools:replace="android:allowBackup,android:label,android:supportsRtl" >
-
-
-    </application>
+        android:theme="@style/base_AppTheme"
+        tools:replace="android:allowBackup,android:label,android:supportsRtl,android:theme" />
 
 </manifest>

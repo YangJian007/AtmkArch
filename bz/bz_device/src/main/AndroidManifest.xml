@@ -7,41 +7,41 @@
 
         <activity
             android:name=".ui.activity.DeviceDetailActivity"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/base_AppTheme"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <!-- 属性详情页 -->
         <activity
             android:name=".ui.activity.PropertyDetailActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/base_AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.activity.EditActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/base_AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name=".ui.activity.ScanActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/base_AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <!-- 播放视频（自适应方向） -->
         <activity
             android:name=".ui.activity.VideoPlayActivity"
             android:launchMode="singleTop"
-            android:theme="@style/FullScreenTheme2" /> <!-- 播放视频（竖屏方向） -->
+            android:theme="@style/FullScreenTheme" /> <!-- 播放视频（竖屏方向） -->
         <activity
             android:name=".ui.activity.VideoPlayActivity$Portrait"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/FullScreenTheme2" /> <!-- 播放视频（横屏方向） -->
+            android:theme="@style/FullScreenTheme" /> <!-- 播放视频（横屏方向） -->
         <activity
             android:name=".ui.activity.VideoPlayActivity$Landscape"
             android:launchMode="singleTop"
             android:screenOrientation="landscape"
-            android:theme="@style/FullScreenTheme2" />
+            android:theme="@style/FullScreenTheme" />
 
     </application>
 

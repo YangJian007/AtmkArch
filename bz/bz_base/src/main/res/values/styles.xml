@@ -2,7 +2,7 @@
 <resources>
 
     <!-- 应用主题样式 -->
-    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="base_AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- 窗口背景颜色 -->
         <item name="android:windowBackground">@color/common_window_background_color</item>
         <!-- 应用的主要色调，ActionBar Toolbar 默认使用该颜色 -->
@@ -34,6 +34,17 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
+    <!-- 全屏主题样式 -->
+    <style name="FullScreenTheme" parent="base_AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- 闪屏页主题样式 -->
+    <style name="SplashTheme" parent="FullScreenTheme">
+        <!-- https://www.jianshu.com/p/d0d907754603 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
 
 
     <!-- 默认按钮样式 -->
