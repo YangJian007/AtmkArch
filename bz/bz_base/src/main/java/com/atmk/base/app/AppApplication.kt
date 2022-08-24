@@ -61,6 +61,9 @@ class AppApplication : Application() {
          * 初始化一些第三方框架
          */
         fun initSdk(application: Application) {
+            //首先初始化ARouter 因为下面的初始化会用到buildConfig
+            ARouter.init(application)
+
             // 设置标题栏初始化器
             TitleBar.setDefaultStyle(TitleBarStyle())
 
@@ -148,7 +151,6 @@ class AppApplication : Application() {
                 })
             }
 
-            ARouter.init(application)
         }
     }
 }

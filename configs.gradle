@@ -33,15 +33,15 @@ ext {
     switch (serverType) {
         case SERVER_TYPE_TEST:
             LOG_ENABLE = true
-            HOST_URL = "https://www.test.baidu.com/"
+            HOST_URL = "http://101.200.187.211:8844/"
             break
         case SERVER_TYPE_PREVIEW:
             LOG_ENABLE = true
-            HOST_URL = "https://www.pre.baidu.com/"
+            HOST_URL = "http://101.200.187.211:8844/"
             break
         case SERVER_TYPE_PRODUCT:
             LOG_ENABLE = false
-            HOST_URL = "https://www.baidu.com/"
+            HOST_URL = "http://101.200.187.211:8844/"
             break
     }
 }

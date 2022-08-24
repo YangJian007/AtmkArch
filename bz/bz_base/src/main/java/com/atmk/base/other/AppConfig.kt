@@ -1,20 +1,23 @@
 package com.atmk.base.other
 
+import com.alibaba.android.arouter.launcher.ARouter
+import com.atmk.base.arouter.BuildConfigService
 
-/**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/AndroidProject-Kotlin
- *    time   : 2019/09/02
- *    desc   : App 配置管理类
- */
+
+
 object AppConfig {
+
+
+    private val service: BuildConfigService
+        get() = ARouter.getInstance().build("/iot/buildConfig").navigation() as BuildConfigService
+
 
     /**
      * 当前是否为调试模式
      */
     fun isDebug(): Boolean {
 //        return BuildConfig.DEBUG
-        return true
+        return service.isDebug()
     }
 
 
@@ -23,9 +26,8 @@ object AppConfig {
      */
     fun isLogEnable(): Boolean {
 //        return BuildConfig.LOG_ENABLE
-        return true
+        return service.isLogEnable()
     }
-
 
 
     /**
@@ -33,6 +35,6 @@ object AppConfig {
      */
     fun getHostUrl(): String {
 //        return BuildConfig.HOST_URL
-        return "http://101.200.187.211:8844/"
+        return service.getHostUrl()
     }
 }
