@@ -1,0 +1,16 @@
+<resources>
+
+    <style name="appupdate_listview_optimize_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:scrollingCache">false</item>
+    </style>
+
+    <declare-styleable name="appupdate_MaxHeightRecyclerView">
+        <attr name="appupdate_maxHeight" format="dimension" />
+    </declare-styleable>
+</resources>

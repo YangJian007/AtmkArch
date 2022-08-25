@@ -1,8 +1,7 @@
 ext {
     // 测试服
     def SERVER_TYPE_TEST = "test"
-    // 预发布服
-    def SERVER_TYPE_PREVIEW = "pre"
+
     // 正式服
     def SERVER_TYPE_PRODUCT = "product"
 
@@ -35,10 +34,7 @@ ext {
             LOG_ENABLE = true
             HOST_URL = "http://101.200.187.211:8844/"
             break
-        case SERVER_TYPE_PREVIEW:
-            LOG_ENABLE = true
-            HOST_URL = "http://101.200.187.211:8844/"
-            break
+
         case SERVER_TYPE_PRODUCT:
             LOG_ENABLE = false
             HOST_URL = "http://101.200.187.211:8844/"

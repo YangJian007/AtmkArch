@@ -11,4 +11,5 @@ dependencies {
     kapt 'com.alibaba:arouter-compiler:1.5.2'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
     implementation project(':bz:bz_base')
+    implementation project(':library:appupdate')
 }

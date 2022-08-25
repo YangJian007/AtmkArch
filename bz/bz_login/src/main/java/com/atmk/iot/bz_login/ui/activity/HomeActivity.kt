@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.launcher.ARouter
+import com.atmk.appupdate.utils.UpdateUtil
 import com.atmk.iot.bz_login.R
 import com.atmk.base.app.AppActivity
 import com.atmk.base.app.AppFragment
@@ -65,12 +66,12 @@ class HomeActivity : AppActivity(), NavigationAdapter.OnNavigationListener {
         pagerAdapter = FragmentPagerAdapter<AppFragment<*>>(this).apply {
             addFragment(fragment1)
             addFragment(fragment2)
-//            addFragment(HomeFragment.newInstance())
-//            addFragment(StatisticsFragment.newInstance())
             viewPager?.adapter = this
         }
         onNewIntent(intent)
     }
+
+
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)

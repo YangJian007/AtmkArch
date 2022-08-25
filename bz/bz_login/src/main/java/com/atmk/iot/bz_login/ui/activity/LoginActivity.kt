@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.util.Base64
 import android.view.KeyEvent
@@ -16,6 +17,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.atmk.appupdate.utils.UpdateUtil
 import com.atmk.iot.bz_login.R
 import com.atmk.base.aop.Log
 import com.atmk.base.aop.SingleClick
@@ -40,7 +42,7 @@ import com.hjq.widget.view.SubmitButton
  */
 @Route(path = "/login/loginAc")
 class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
-        TextView.OnEditorActionListener {
+    TextView.OnEditorActionListener {
 
     companion object {
 
@@ -66,7 +68,7 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
     private val commitView: SubmitButton? by lazy { findViewById(R.id.btn_login_commit) }
     private val etVersionCode: EditText? by lazy { findViewById(R.id.et_version_code) }
     private val ivVersionCode: ImageView? by lazy { findViewById(R.id.iv_version_code) }
-    private lateinit var key:String
+    private lateinit var key: String
 
     /** logo 缩放比例 */
     private val logoScale: Float = 0.8f
@@ -83,18 +85,18 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
         passwordView?.setOnEditorActionListener(this)
         commitView?.let {
             InputTextManager.with(this)
-                    .addView(usernameView)
-                    .addView(passwordView)
-                    .addView(etVersionCode)
-                    .setMain(it)
-                    .build()
+                .addView(usernameView)
+                .addView(passwordView)
+                .addView(etVersionCode)
+                .setMain(it)
+                .build()
         }
     }
 
     override fun initData() {
         postDelayed({
             KeyboardWatcher.with(this@LoginActivity)
-                    .setListener(this@LoginActivity)
+                .setListener(this@LoginActivity)
         }, 500)
 
         getVersionCode()
@@ -103,7 +105,10 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
         passwordView?.setText(getString(INTENT_KEY_IN_PASSWORD))
 //        usernameView?.setText("yangjian")
 //        passwordView?.setText("YAJyaj381")
+        UpdateUtil.getAndUpdate(this, "53")
     }
+
+
 
 
     @SingleClick
@@ -113,36 +118,37 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
             // 隐藏软键盘
             hideKeyboard(currentFocus)
             EasyHttp.post(this)
-                    .api(LoginApi().apply {
-                        username=usernameView?.text.toString()
-                        password=passwordView?.text.toString()
-                        verifyCode=etVersionCode?.text.toString()
-                        verifyKey=key
-                    })
-                    .request(object : OnHttpListener<HttpData<LoginApi.Bean?>> {
-                        override fun onSucceed(result: HttpData<LoginApi.Bean?>?) {
-                            // 更新 Token
-                            EasyConfig.getInstance().addHeader("X-Access-Token", result?.getData()?.token)
+                .api(LoginApi().apply {
+                    username = usernameView?.text.toString()
+                    password = passwordView?.text.toString()
+                    verifyCode = etVersionCode?.text.toString()
+                    verifyKey = key
+                })
+                .request(object : OnHttpListener<HttpData<LoginApi.Bean?>> {
+                    override fun onSucceed(result: HttpData<LoginApi.Bean?>?) {
+                        // 更新 Token
+                        EasyConfig.getInstance()
+                            .addHeader("X-Access-Token", result?.getData()?.token)
 //                            toast(result?.getData()?.token)
+                        postDelayed({
+                            commitView?.showSucceed()
                             postDelayed({
-                                commitView?.showSucceed()
-                                postDelayed({
-                                    // 跳转到首页
-                                    toast("登录成功")
+                                // 跳转到首页
+                                toast("登录成功")
 //                                    HomeActivity.start(getContext(), HomeFragment::class.java)
-                                    startActivity(Intent(this@LoginActivity,HomeActivity::class.java))
-                                    finish()
-                                }, 1000)
+                                startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+                                finish()
                             }, 1000)
+                        }, 1000)
 //                        test()
-                        }
+                    }
 
-                        override fun onFail(e: java.lang.Exception?) {
-                            commitView?.showError(3000)
-                            toast("登录失败")
-                        }
+                    override fun onFail(e: java.lang.Exception?) {
+                        commitView?.showError(3000)
+                        toast("登录失败")
+                    }
 
-                    })
+                })
             return
         }
         if (view === ivVersionCode) {
@@ -156,28 +162,27 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
      */
     private fun getVersionCode() {
         EasyHttp.get(this)
-                .api(VersionCodeApi())
-                .request(object : OnHttpListener<HttpData<VersionCodeApi.Bean?>> {
-                    override fun onSucceed(result: HttpData<VersionCodeApi.Bean?>?) {
-                        //展示验证码图片
-                        val decodedString: ByteArray = Base64.decode(
-                                result?.getData()?.base64?.split(",")?.toTypedArray()?.get(1),
-                                Base64.DEFAULT
-                        )
-                        val decodedByte =
-                                BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
-                        ivVersionCode?.setImageBitmap(decodedByte)
-                        //存储key
-                        key = result?.getData()?.key.toString()
-                    }
+            .api(VersionCodeApi())
+            .request(object : OnHttpListener<HttpData<VersionCodeApi.Bean?>> {
+                override fun onSucceed(result: HttpData<VersionCodeApi.Bean?>?) {
+                    //展示验证码图片
+                    val decodedString: ByteArray = Base64.decode(
+                        result?.getData()?.base64?.split(",")?.toTypedArray()?.get(1),
+                        Base64.DEFAULT
+                    )
+                    val decodedByte =
+                        BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+                    ivVersionCode?.setImageBitmap(decodedByte)
+                    //存储key
+                    key = result?.getData()?.key.toString()
+                }
 
-                    override fun onFail(e: java.lang.Exception?) {
-                        toast("验证码获取失败")
-                    }
+                override fun onFail(e: java.lang.Exception?) {
+                    toast("验证码获取失败")
+                }
 
-                })
+            })
     }
-
 
 
     /**
@@ -187,8 +192,8 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
         // 执行位移动画
         bodyLayout?.let {
             val objectAnimator: ObjectAnimator = ObjectAnimator.ofFloat(
-                    it,
-                    "translationY", 0f, (-(commitView?.height?.toFloat() ?: 0f))
+                it,
+                "translationY", 0f, (-(commitView?.height?.toFloat() ?: 0f))
             )
             objectAnimator.duration = animTime.toLong()
             objectAnimator.interpolator = AccelerateDecelerateInterpolator()
@@ -203,8 +208,8 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
             val scaleX = ObjectAnimator.ofFloat(it, "scaleX", 1f, logoScale)
             val scaleY = ObjectAnimator.ofFloat(it, "scaleY", 1f, logoScale)
             val translationY = ObjectAnimator.ofFloat(
-                    it, "translationY",
-                    0f, (-(commitView?.height?.toFloat() ?: 0f))
+                it, "translationY",
+                0f, (-(commitView?.height?.toFloat() ?: 0f))
             )
             animatorSet.play(translationY).with(scaleX).with(scaleY)
             animatorSet.duration = animTime.toLong()
@@ -216,8 +221,8 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
         // 执行位移动画
         bodyLayout?.let {
             val objectAnimator: ObjectAnimator = ObjectAnimator.ofFloat(
-                    it,
-                    "translationY", it.translationY, 0f
+                it,
+                "translationY", it.translationY, 0f
             )
             objectAnimator.duration = animTime.toLong()
             objectAnimator.interpolator = AccelerateDecelerateInterpolator()
@@ -237,8 +242,8 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
             val scaleX: ObjectAnimator = ObjectAnimator.ofFloat(it, "scaleX", logoScale, 1f)
             val scaleY: ObjectAnimator = ObjectAnimator.ofFloat(it, "scaleY", logoScale, 1f)
             val translationY: ObjectAnimator = ObjectAnimator.ofFloat(
-                    it,
-                    "translationY", it.translationY, 0f
+                it,
+                "translationY", it.translationY, 0f
             )
             animatorSet.play(translationY).with(scaleX).with(scaleY)
             animatorSet.duration = animTime.toLong()
@@ -265,7 +270,7 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
 
     override fun createStatusBarConfig(): ImmersionBar {
         return super.createStatusBarConfig()
-                // 指定导航栏背景颜色
-                .navigationBarColor(R.color.white)
+            // 指定导航栏背景颜色
+            .navigationBarColor(R.color.white)
     }
 }

@@ -60,14 +60,6 @@ android {
             }
         }
 
-        preview.initWith(debug)
-        preview {
-            applicationIdSuffix ''
-            // 添加清单占位符
-            addManifestPlaceholders([
-                    'app_name': '物联网平台 Preview 版'
-            ])
-        }
 
         release {
             // 调试模式开关
@@ -83,7 +75,7 @@ android {
             signingConfig signingConfigs.config
             // 添加清单占位符
             addManifestPlaceholders([
-                    'app_name': '@string/app_name'
+                    'app_name': '物联网平台'
             ])
             // 仅保留两种架构的 so 库，根据 Bugly 统计得出
             ndk {
@@ -104,7 +96,7 @@ android {
     applicationVariants.all { variant ->
         // apk 输出文件名配置
         variant.outputs.all { output ->
-            outputFileName = rootProject.getName() + '_v' + variant.versionName + '_' + variant.buildType.name
+            outputFileName = project.getName() + '_v' + variant.versionName + '_' + variant.buildType.name
             if (variant.buildType.name == buildTypes.release.getName()) {
                 outputFileName += '_' + new Date().format('MMdd')
             }
