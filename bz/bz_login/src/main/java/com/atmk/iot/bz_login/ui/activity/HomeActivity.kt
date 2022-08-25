@@ -60,7 +60,7 @@ class HomeActivity : AppActivity(), NavigationAdapter.OnNavigationListener {
     override fun initData() {
 
       val  fragment1= ARouter.getInstance().build("/device/homeFm").navigation() as AppFragment<*>
-      val  fragment2= ARouter.getInstance().build("/statistics/statisticsFm").navigation() as AppFragment<*>
+      val  fragment2= ARouter.getInstance().build("/statistics/statisticsFm").withString("aaa","333").navigation() as AppFragment<*>
 
         pagerAdapter = FragmentPagerAdapter<AppFragment<*>>(this).apply {
             addFragment(fragment1)

@@ -1,4 +1,4 @@
-package com.atmk.base.app
+package com.atmk.base
 
 import android.app.Activity
 import android.app.Application
@@ -10,7 +10,6 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import com.alibaba.android.arouter.launcher.ARouter
-import com.atmk.base.R
 import com.atmk.base.aop.Log
 import com.atmk.base.http.glide.GlideApp
 import com.atmk.base.http.model.RequestHandler
@@ -20,6 +19,8 @@ import com.atmk.base.other.*
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonToken
 import com.hjq.bar.TitleBar
+import com.hjq.base.application.ApplicationProvider
+import com.hjq.base.application.BaseModuleInit
 import com.hjq.gson.factory.GsonFactory
 import com.hjq.http.EasyConfig
 import com.hjq.toast.ToastUtils
@@ -29,31 +30,32 @@ import com.tencent.mmkv.MMKV
 import okhttp3.OkHttpClient
 import timber.log.Timber
 
-
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/AndroidProject-Kotlin
- *    time   : 2018/10/18
- *    desc   : 应用入口
+ * @author 杨剑
+ * @fileName
+ * @date 2022-08-24
+ * @describe  相当于该module的application
+ * @changeUser
+ * @changTime
  */
-class AppApplication : Application() {
+class BzBaseModuleInit: BaseModuleInit() {
 
     @Log("启动耗时")
     override fun onCreate() {
         super.onCreate()
-        initSdk(this)
+        initSdk(ApplicationProvider.appContext)
     }
 
     override fun onLowMemory() {
         super.onLowMemory()
         // 清理所有图片内存缓存
-        GlideApp.get(this).onLowMemory()
+        GlideApp.get(ApplicationProvider.appContext).onLowMemory()
     }
 
     override fun onTrimMemory(level: Int) {
         super.onTrimMemory(level)
         // 根据手机内存剩余情况清理图片内存缓存
-        GlideApp.get(this).onTrimMemory(level)
+        GlideApp.get(ApplicationProvider.appContext).onTrimMemory(level)
     }
 
     companion object {
@@ -154,4 +156,5 @@ class AppApplication : Application() {
 
         }
     }
+
 }

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.atmk.iot">
 
-    <application android:name="com.atmk.base.app.AppApplication"
+    <application android:name="com.atmk.iot.IotApplication"
         android:label="${app_name}"
         android:icon="@mipmap/app_ic_launcher"
         android:supportsRtl="false"
