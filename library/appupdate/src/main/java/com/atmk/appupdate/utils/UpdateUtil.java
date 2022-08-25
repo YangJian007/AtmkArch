@@ -72,7 +72,7 @@ public class UpdateUtil {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(activity, "没有可以更新的版本", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(activity, "没有可以更新的版本", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

@@ -16,9 +16,14 @@ android {
         versionName '1.0.0'
         versionCode 1
 
+        // 日志打印开关
+        buildConfigField('boolean', 'LOG_ENABLE', '' + LOG_ENABLE + '')
+        // 测试服务器的主机地址
+        buildConfigField('String', 'HOST_URL', '"' + HOST_URL + '"')
+
         kapt {
             arguments {
-                arg("AROUTER_MODULE_NAME", project.getName())
+                        arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
 
@@ -71,24 +76,24 @@ android {
 //                'versions.9','com.alibaba'
         // 只对以下包名做 AOP 处理
 //                include android.defaultConfig.applicationId
-                include 'com.atmk.iot',
-                        'com.atmk.base',
-                        'com.atmk.iot.bz_device',
-                        'com.atmk.iot.bz_login'
+        include 'com.atmk.iot',
+                'com.atmk.base',
+                'com.atmk.iot.bz_device',
+                'com.atmk.iot.bz_login'
 
 
     }
 
 }
 
-afterEvaluate {
-    // 前提条件是这个 Module 工程必须是 Library 类型，并且排除名为 umeng 的 Module 工程
-    if (android.defaultConfig.applicationId == null && "umeng" != getName()) {
-        // 排除 BuildConfig.class
-        generateReleaseBuildConfig.enabled = false
-        generateDebugBuildConfig.enabled = false
-    }
-}
+//afterEvaluate {
+//    // 前提条件是这个 Module 工程必须是 Library 类型，并且排除名为 umeng 的 Module 工程
+//    if (android.defaultConfig.applicationId == null && "umeng" != getName()) {
+//        // 排除 BuildConfig.class
+//        generateReleaseBuildConfig.enabled = false
+//        generateDebugBuildConfig.enabled = false
+//    }
+//}
 
 dependencies {
     // 依赖 libs 目录下所有的 jar 和 aar 包
