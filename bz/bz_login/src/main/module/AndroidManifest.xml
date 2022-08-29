@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.atmk.iot.bz_login">
 
-    <application>
+    <application
+        android:name="com.atmk.iot.bz_login.LoginApplication"
+        android:label="登录模块"
+        android:icon="@mipmap/base_ic_launcher"
+        android:supportsRtl="false"
+        android:allowBackup="false"
+        android:theme="@style/base_AppTheme"
+        tools:replace="android:allowBackup,android:label,android:supportsRtl,android:theme,android:icon">
         <!-- 登录页 -->
         <activity
             android:name=".ui.activity.LoginActivity"

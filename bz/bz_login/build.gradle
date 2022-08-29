@@ -1,8 +1,30 @@
-apply plugin: 'com.android.library'
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
 apply from: '../../common.gradle'
 
 
 android {
+
+    defaultConfig{
+        if (isModule.toBoolean()) {
+            applicationId "com.atmk.iot.bz_login"
+        }
+    }
+
+    sourceSets {
+        main {
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+
     //资源命名加前缀
     resourcePrefix "login_"
 }

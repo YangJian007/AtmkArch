@@ -76,10 +76,12 @@ android {
 //                'versions.9','com.alibaba'
         // 只对以下包名做 AOP 处理
 //                include android.defaultConfig.applicationId
-        include 'com.atmk.iot',
-                'com.atmk.base',
-                'com.atmk.iot.bz_device',
-                'com.atmk.iot.bz_login'
+//        include 'com.atmk.iot',
+//                'com.atmk.base',
+//                'com.atmk.iot.bz_device',
+//                'com.atmk.iot.bz_statistics',
+//                'com.atmk.iot.bz_login'
+        include 'com.atmk.*'
 
 
     }
