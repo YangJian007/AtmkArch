@@ -7,7 +7,7 @@ apply plugin: 'android-aspectjx'
 android {
 
     // 编译源码版本
-    compileSdkVersion 30
+    compileSdkVersion 31
     defaultConfig {
         // 最低安装版本
         minSdkVersion 21
@@ -83,7 +83,11 @@ android {
 //                'com.atmk.iot.bz_login'
         include 'com.atmk.*'
 
+    }
 
+    buildFeatures{
+        viewBinding true
+        dataBinding true
     }
 
 }
@@ -109,8 +113,14 @@ dependencies {
     // Kotlin 协程：https://github.com/Kotlin/kotlinx.coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    //lifecycle相关 全都是ktx扩展库
+    implementation "androidx.activity:activity-ktx:1.5.1"
+    implementation "androidx.fragment:fragment-ktx:1.5.1"
+    def lifecycleVersion="2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
 
 
 }
