@@ -1,4 +1,5 @@
 apply plugin : 'com.android.library'
+apply plugin: 'dagger.hilt.android.plugin'
 apply from : '../../common.gradle'
 
 // 添加构建依赖项：https://developer.android.google.cn/studio/build/dependencies
@@ -86,6 +87,16 @@ dependencies {
     // 内存泄漏监测框架：https://github.com/square/leakcanary
 //    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 //    previewImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+    //hilt  https://developer.android.google.cn/training/dependency-injection/hilt-android?hl=zh-cn#setup
+    implementation "com.google.dagger:hilt-android:2.35"
+    kapt "com.google.dagger:hilt-android-compiler:2.35"
+
+    //retrofit
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    //日志拦截器
+    api 'com.squareup.okhttp3:logging-interceptor:3.12.13'
 
 
 }

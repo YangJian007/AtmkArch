@@ -16,11 +16,9 @@
  *
  */
 
-package com.atmk.iot.bz_statistics.mvvm
+package com.atmk.base.http.retrofit
 
 
-import com.atmk.iot.bz_statistic.R
-import com.hjq.base.application.ApplicationProvider
 import com.hjq.toast.ToastUtils
 import kotlinx.coroutines.CancellationException
 import retrofit2.HttpException

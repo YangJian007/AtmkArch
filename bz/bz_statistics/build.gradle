@@ -1,17 +1,23 @@
 apply plugin: 'com.android.library'
+apply plugin: 'dagger.hilt.android.plugin'
 apply from: '../../common.gradle'
 
 
 
 
 dependencies {
-    implementation project(':bz:bz_base')
+
+    //region 固有声明
+    implementation "com.google.dagger:hilt-android:2.35"
+    kapt "com.google.dagger:hilt-android-compiler:2.35"
     kapt 'com.alibaba:arouter-compiler:1.5.2'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation project(':bz:bz_base')
+    //endregion
 
-    //retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
-    //日志拦截器
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    //region 个性化声明
+
+    //endregion
+
+
 }

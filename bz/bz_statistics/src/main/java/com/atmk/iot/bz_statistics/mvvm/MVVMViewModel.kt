@@ -2,8 +2,11 @@ package com.atmk.iot.bz_statistics.mvvm
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
+import com.atmk.base.http.retrofit.HttpErrorDeal
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
 /**
  * @author 杨剑
@@ -13,11 +16,13 @@ import kotlinx.coroutines.flow.flow
  * @changeUser
  * @changTime
  */
-class MVVMViewModel : ViewModel() {
+
+@HiltViewModel
+class MVVMViewModel @Inject constructor(private val mvvmRespository: MVVMRespository) : ViewModel() {
 
 
     fun getUserInfo(username:String,password:String)= flow {
-        val userInfo = MVVMRespository().getUser(username, password)
+        val userInfo = mvvmRespository.getUser(username, password)
         emit(userInfo)
     }.catch {
         if (it is Exception) {

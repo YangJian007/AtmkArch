@@ -107,12 +107,14 @@ dependencies {
 
     // AndroidX 库：https://github.com/androidx/androidx
     implementation 'androidx.appcompat:appcompat:1.3.1'
+
     // Material 库：https://github.com/material-components/material-components-android
     implementation 'com.google.android.material:material:1.4.0'
 
     // Kotlin 协程：https://github.com/Kotlin/kotlinx.coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+
     //lifecycle相关 全都是ktx扩展库
     implementation "androidx.activity:activity-ktx:1.5.1"
     implementation "androidx.fragment:fragment-ktx:1.5.1"
@@ -121,6 +123,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+
+
 
 
 }

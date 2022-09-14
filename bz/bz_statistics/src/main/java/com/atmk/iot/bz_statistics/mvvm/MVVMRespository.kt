@@ -1,5 +1,8 @@
 package com.atmk.iot.bz_statistics.mvvm
 
+import com.atmk.iot.bz_statistics.netdi.UserServiceApi
+import javax.inject.Inject
+
 /**
  * @author 杨剑
  * @fileName
@@ -8,10 +11,12 @@ package com.atmk.iot.bz_statistics.mvvm
  * @changeUser
  * @changTime
  */
-class MVVMRespository {
+class MVVMRespository @Inject constructor(
+    private val api: UserServiceApi
+) {
 
-    suspend fun getUser(name:String,password:String):UserInfo?{
-        return userServiceApi.login1(name,password).data
+    suspend fun getUser(name: String, password: String): UserInfo? {
+        return api.login1(name, password).data
     }
 
 }

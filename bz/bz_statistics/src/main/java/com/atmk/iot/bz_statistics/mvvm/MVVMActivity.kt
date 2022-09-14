@@ -3,6 +3,7 @@ package com.atmk.iot.bz_statistics.mvvm
 import androidx.activity.viewModels
 import com.atmk.base.app.AppVMActivity
 import com.atmk.iot.bz_statistic.databinding.ActivityMvvmBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * @author 杨剑
@@ -12,6 +13,7 @@ import com.atmk.iot.bz_statistic.databinding.ActivityMvvmBinding
  * @changeUser
  * @changTime
  */
+@AndroidEntryPoint
 class MVVMActivity : AppVMActivity<ActivityMvvmBinding>() {
 
     //viewModel

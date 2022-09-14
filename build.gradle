@@ -30,6 +30,8 @@ buildscript {
         classpath "com.alibaba:arouter-register:1.0.2"
         //https://github.com/hust201010701/CheckResourceConflict
         classpath 'com.orzangleli:checkresourceconflict:0.0.2'
+        //Hilt 插件
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.35'
     }
 }
 

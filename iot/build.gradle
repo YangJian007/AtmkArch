@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'dagger.hilt.android.plugin'
 apply from: '../common.gradle'
 
 
@@ -106,11 +107,16 @@ android {
 
 
 dependencies {
+
+    //region 固有声明
+    implementation "com.google.dagger:hilt-android:2.35"
+    kapt "com.google.dagger:hilt-android-compiler:2.35"
     kapt 'com.alibaba:arouter-compiler:1.5.2'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
-    //业务基础模块
     implementation project(':bz:bz_base')
+    //endregion
 
+    //region 个性化声明
     if (!isModule.toBoolean()){
         //登录模块
         implementation project(':bz:bz_login')
@@ -119,5 +125,7 @@ dependencies {
         //统计模块
         implementation project(':bz:bz_statistics')
     }
+    //endregion
+
 
 }
