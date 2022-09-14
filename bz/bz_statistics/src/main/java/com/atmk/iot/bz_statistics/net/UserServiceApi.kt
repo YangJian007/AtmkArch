@@ -1,6 +1,6 @@
-package com.atmk.iot.bz_statistics.netdi
+package com.atmk.iot.bz_statistics.net
 
-import com.atmk.iot.bz_statistics.mvvm.UserInfo
+import com.atmk.iot.bz_statistics.mvvm.m.UserInfo
 import com.yang.hilt.net.BaseReq
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

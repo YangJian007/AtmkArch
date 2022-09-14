@@ -1,8 +1,10 @@
-package com.atmk.iot.bz_statistics.mvvm
+package com.atmk.iot.bz_statistics.mvvm.v
 
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.atmk.base.app.AppVMActivity
 import com.atmk.iot.bz_statistic.databinding.ActivityMvvmBinding
+import com.atmk.iot.bz_statistics.mvvm.vm.MVVMViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -27,16 +29,24 @@ class MVVMActivity : AppVMActivity<ActivityMvvmBinding>() {
     override fun initView() {
 
         mViewBinding.btn.setOnClickListener {
-            viewModel.getUserInfo("15225937677","yang641052")
-                .observe(this){
-                    mViewBinding.tv.text=it.toString()
-                }
+            loadData()
+        }
+
+        lifecycleScope.launchWhenResumed {
+            viewModel.userInfo.collect {
+                mViewBinding.tv.text = it.toString()
+            }
         }
 
     }
 
     override fun initData() {
+        loadData()
+    }
 
+    //获取数据
+    private fun loadData() {
+        viewModel.getUserInfo("15225937677", "yang641052")
     }
 
 

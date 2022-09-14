@@ -8,9 +8,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.atmk.base.app.AppActivity
 import com.atmk.base.app.TitleBarFragment
 import com.atmk.iot.bz_statistic.R
-import com.atmk.iot.bz_statistic.databinding.FragmentStaticticsBinding
-import com.atmk.iot.bz_statistics.mvvm.MVVMActivity
-import java.util.zip.Inflater
+import com.atmk.iot.bz_statistics.mvvm.v.MVVMActivity
 
 /**
  * @author 杨剑
@@ -37,7 +35,7 @@ class StatisticsFragment : TitleBarFragment<AppActivity>() {
         ARouter.getInstance().inject(this)
 
         findViewById<Button>(R.id.btn)?.setOnClickListener {
-            startActivity(Intent(requireActivity(),MVVMActivity::class.java))
+            startActivity(Intent(requireActivity(), MVVMActivity::class.java))
         }
     }
 

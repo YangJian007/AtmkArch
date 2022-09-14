@@ -1,6 +1,7 @@
-package com.atmk.iot.bz_statistics.mvvm
+package com.atmk.iot.bz_statistics.mvvm.m
 
-import com.atmk.iot.bz_statistics.netdi.UserServiceApi
+import com.atmk.iot.bz_statistics.mvvm.m.UserInfo
+import com.atmk.iot.bz_statistics.net.UserServiceApi
 import javax.inject.Inject
 
 /**

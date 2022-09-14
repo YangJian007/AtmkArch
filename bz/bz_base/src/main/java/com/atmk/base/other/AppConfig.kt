@@ -24,6 +24,14 @@ object AppConfig {
 
 
     /**
+     * 当前Http请求日志tag
+     */
+    fun getHttpTag(): String {
+        return "okhttp"
+    }
+
+
+    /**
      * 获取服务器主机地址
      */
     fun getHostUrl(): String {

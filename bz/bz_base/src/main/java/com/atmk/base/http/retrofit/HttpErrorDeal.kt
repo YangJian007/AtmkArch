@@ -42,16 +42,16 @@ object HttpErrorDeal {
     fun dealHttpError(error: Throwable, deal: (() -> Unit)? = null) {
         when (error) {
             is SocketException -> {
-                ToastUtils.show("SocketException")
+                ToastUtils.show("服务器连接异常")
             }
             is HttpException -> {
-                ToastUtils.show("HttpException")
+                ToastUtils.show("服务器连接失败")
             }
             is SocketTimeoutException -> {
-                ToastUtils.show("SocketTimeoutException")
+                ToastUtils.show("请求超时，请检查网络连接")
             }
             is IOException -> {
-                ToastUtils.show("IOException")
+                ToastUtils.show("服务器连接失败")
             }
             is CancellationException -> {
                 //协程被取消 这里是正常的 不提示
@@ -61,7 +61,7 @@ object HttpErrorDeal {
                     if (it.isNotEmpty()) {
                         ToastUtils.show(it)
                     } else {
-                        ToastUtils.show("未知异常")
+                        ToastUtils.show("空指针异常")
                     }
                 }
             }

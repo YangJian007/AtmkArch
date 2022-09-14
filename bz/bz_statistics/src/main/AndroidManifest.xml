@@ -5,7 +5,7 @@
     <application>
 
         <activity
-            android:name="com.atmk.iot.bz_statistics.mvvm.MVVMActivity"
+            android:name="com.atmk.iot.bz_statistics.mvvm.v.MVVMActivity"
             android:theme="@style/base_AppTheme"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />

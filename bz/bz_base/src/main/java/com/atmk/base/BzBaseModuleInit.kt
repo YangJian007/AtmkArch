@@ -116,6 +116,7 @@ class BzBaseModuleInit: BaseModuleInit() {
             EasyConfig.with(okHttpClient)
                 // 是否打印日志
                 .setLogEnabled(AppConfig.isLogEnable())
+                .setLogTag(AppConfig.getHttpTag())
                 // 设置服务器配置
                 .setServer(RequestServer())
                 // 设置请求处理策略
