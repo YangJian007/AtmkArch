@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import com.hjq.base.BaseActivity.OnActivityCallback
+import com.hjq.base.AbsBaseActivity.OnActivityCallback
 import com.hjq.base.action.BundleAction
 import com.hjq.base.action.ClickAction
 import com.hjq.base.action.HandlerAction
@@ -24,7 +24,7 @@ import com.hjq.base.action.KeyboardAction
  *    time   : 2018/10/18
  *    desc   : Fragment 技术基类
  */
-abstract class BaseFragment<A : BaseActivity> : Fragment(),
+abstract class BaseFragment<A : AbsBaseActivity> : Fragment(),
     HandlerAction, ClickAction, BundleAction, KeyboardAction {
 
     /** Activity 对象 */

@@ -13,7 +13,7 @@ import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.viewbinding.ViewBinding
-import com.hjq.base.BaseVMActivity.OnActivityCallback
+import com.hjq.base.AbsBaseActivity.OnActivityCallback
 import com.hjq.base.action.BundleAction
 import com.hjq.base.action.ClickAction
 import com.hjq.base.action.HandlerAction
@@ -25,7 +25,7 @@ import com.hjq.base.action.KeyboardAction
  *    time   : 2018/10/18
  *    desc   : Fragment 技术基类
  */
-abstract class BaseVMFragment<T : ViewBinding, A : BaseVMActivity<*>> : Fragment(),
+abstract class BaseVMFragment<T : ViewBinding, A : AbsBaseActivity> : Fragment(),
     HandlerAction, ClickAction, BundleAction, KeyboardAction {
 
     /** Activity 对象 */
@@ -97,7 +97,7 @@ abstract class BaseVMFragment<T : ViewBinding, A : BaseVMActivity<*>> : Fragment
         super.onDestroy()
         loading = false
         removeCallbacks()
-        mViewBinding=null
+        mViewBinding = null
     }
 
     override fun onDetach() {
@@ -198,7 +198,7 @@ abstract class BaseVMFragment<T : ViewBinding, A : BaseVMActivity<*>> : Fragment
         val fragments: MutableList<Fragment?> = childFragmentManager.fragments
         for (fragment: Fragment? in fragments) {
             // 这个子 Fragment 必须是 BaseFragment 的子类，并且处于可见状态
-            if (fragment !is BaseVMFragment<*,*> || fragment.getLifecycle().currentState != Lifecycle.State.RESUMED) {
+            if (fragment !is BaseVMFragment<*, *> || fragment.getLifecycle().currentState != Lifecycle.State.RESUMED) {
                 continue
             }
             // 将按键事件派发给子 Fragment 进行处理
