@@ -6,6 +6,8 @@ import com.atmk.base.app.AppVMActivity
 import com.atmk.iot.bz_statistic.databinding.ActivityMvvmBinding
 import com.atmk.iot.bz_statistics.mvvm.vm.MVVMViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.map
 
 /**
  * @author 杨剑
@@ -33,8 +35,17 @@ class MVVMActivity : AppVMActivity<ActivityMvvmBinding>() {
         }
 
         lifecycleScope.launchWhenResumed {
-            viewModel.userInfo.collect {
-                mViewBinding.tv.text = it.toString()
+            viewModel.userInfo
+                .map { it?.username }
+                .collect {
+                mViewBinding.tv.text = it
+            }
+        }
+
+        mViewBinding.btn2.setOnClickListener {
+            lifecycleScope.launchWhenCreated {
+                delay(100)
+                throw IndexOutOfBoundsException()
             }
         }
 

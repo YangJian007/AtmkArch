@@ -1,5 +1,8 @@
 package com.atmk.base.http.retrofit;
 import android.app.Activity;
+
+import androidx.annotation.NonNull;
+
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.atmk.base.manager.ActivityManager;
 import java.io.IOException;
@@ -11,6 +14,7 @@ import okhttp3.Response;
  * Okhttp接口请求拦截器，判断token是否过期，若token过期则跳转至登录页面
  */
 public class TokenInterceptor implements Interceptor {
+    @NonNull
     @Override
     public Response intercept(Chain chain) throws IOException {
 
