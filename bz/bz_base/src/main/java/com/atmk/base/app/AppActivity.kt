@@ -40,14 +40,14 @@ abstract class AppActivity : BaseActivity(),
     /**
      * 当前加载对话框是否在显示中
      */
-    open fun isShowDialog(): Boolean {
+    override fun isShowDialog(): Boolean {
         return dialog != null && dialog!!.isShowing
     }
 
     /**
      * 显示加载对话框
      */
-    open fun showDialog() {
+    override fun showDialog() {
         if (isFinishing || isDestroyed) {
             return
         }
@@ -70,7 +70,7 @@ abstract class AppActivity : BaseActivity(),
     /**
      * 隐藏加载对话框
      */
-    open fun hideDialog() {
+    override fun hideDialog() {
         if (isFinishing || isDestroyed) {
             return
         }
@@ -103,14 +103,14 @@ abstract class AppActivity : BaseActivity(),
     /**
      * 是否使用沉浸式状态栏
      */
-    protected open fun isStatusBarEnabled(): Boolean {
+     override fun isStatusBarEnabled(): Boolean {
         return true
     }
 
     /**
      * 状态栏字体深色模式
      */
-    open fun isStatusBarDarkFont(): Boolean {
+    override fun isStatusBarDarkFont(): Boolean {
         return true
     }
 

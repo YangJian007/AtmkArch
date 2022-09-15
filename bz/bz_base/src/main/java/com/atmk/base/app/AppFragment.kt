@@ -3,6 +3,7 @@ package com.atmk.base.app
 import com.hjq.base.BaseFragment
 import com.atmk.base.action.ToastAction
 import com.atmk.base.http.model.HttpData
+import com.hjq.base.AbsBaseActivity
 import com.hjq.http.listener.OnHttpListener
 import okhttp3.Call
 
@@ -12,7 +13,7 @@ import okhttp3.Call
  *    time   : 2018/10/18
  *    desc   : Fragment 业务基类
  */
-abstract class AppFragment<A : AppActivity> : BaseFragment<A>(),
+abstract class AppFragment<A : AbsBaseActivity> : BaseFragment<A>(),
     ToastAction, OnHttpListener<Any> {
 
     /**

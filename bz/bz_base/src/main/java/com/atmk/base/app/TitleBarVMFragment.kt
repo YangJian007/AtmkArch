@@ -7,6 +7,7 @@ import com.gyf.immersionbar.ImmersionBar
 import com.hjq.bar.TitleBar
 import com.atmk.base.R
 import com.atmk.base.action.TitleBarAction
+import com.hjq.base.AbsBaseActivity
 
 /**
  *    author : Android 轮子哥
@@ -14,7 +15,7 @@ import com.atmk.base.action.TitleBarAction
  *    time   : 2020/10/31
  *    desc   : 带标题栏的 Fragment 业务基类
  */
-abstract class TitleBarVMFragment<T : ViewBinding,A : AppVMActivity<*>> : AppVMFragment<T,A>(), TitleBarAction {
+abstract class TitleBarVMFragment<T : ViewBinding,A : AbsBaseActivity> : AppVMFragment<T,A>(), TitleBarAction {
 
     /** 标题栏对象 */
     private var titleBar: TitleBar? = null

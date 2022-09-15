@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.launcher.ARouter
@@ -42,7 +43,7 @@ class HomeActivity : AppActivity(), NavigationAdapter.OnNavigationListener {
     private val viewPager: ViewPager? by lazy { findViewById(R.id.vp_home_pager) }
     private val navigationView: RecyclerView? by lazy { findViewById(R.id.rv_home_navigation) }
     private var navigationAdapter: NavigationAdapter? = null
-    private var pagerAdapter: FragmentPagerAdapter<AppFragment<*>>? = null
+    private var pagerAdapter: FragmentPagerAdapter<Fragment>? = null
     override fun getLayoutId(): Int {
         return R.layout.login_home_activity
     }
@@ -60,10 +61,10 @@ class HomeActivity : AppActivity(), NavigationAdapter.OnNavigationListener {
 
     override fun initData() {
 
-      val  fragment1= ARouter.getInstance().build("/device/homeFm").navigation() as AppFragment<*>
-      val  fragment2= ARouter.getInstance().build("/statistics/statisticsFm").withString("aaa","333").navigation() as AppFragment<*>
+      val  fragment1= ARouter.getInstance().build("/device/homeFm").navigation() as Fragment
+      val  fragment2= ARouter.getInstance().build("/statistics/statisticsFm").withString("aaa","333").navigation() as Fragment
 
-        pagerAdapter = FragmentPagerAdapter<AppFragment<*>>(this).apply {
+        pagerAdapter = FragmentPagerAdapter<Fragment>(this).apply {
             addFragment(fragment1)
             addFragment(fragment2)
             viewPager?.adapter = this

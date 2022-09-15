@@ -167,5 +167,18 @@ abstract class AbsBaseActivity : AppCompatActivity(), ActivityAction,
         fun onActivityResult(resultCode: Int, data: Intent?)
     }
 
-//    protected abstract fun isShowDialog(): Boolean
+    /*
+    * 业务层去需要实现的方法
+    * */
+     abstract fun isShowDialog(): Boolean
+
+     abstract fun showDialog()
+
+    abstract fun hideDialog()
+
+    abstract fun isStatusBarEnabled(): Boolean
+
+     abstract fun isStatusBarDarkFont(): Boolean
+
+
 }

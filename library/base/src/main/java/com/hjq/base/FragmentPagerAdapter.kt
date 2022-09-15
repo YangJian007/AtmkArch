@@ -1,5 +1,6 @@
 package com.hjq.base
 
+import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -14,6 +15,7 @@ import java.util.*
  *    time   : 2018/10/18
  *    desc   : FragmentPagerAdapter 封装
  */
+@SuppressLint("WrongConstant")
 @Suppress("deprecation")
 open class FragmentPagerAdapter<F : Fragment> constructor(manager: FragmentManager) :
     FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

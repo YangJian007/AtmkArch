@@ -3,6 +3,7 @@ package com.atmk.base.app
 import androidx.viewbinding.ViewBinding
 import com.atmk.base.action.ToastAction
 import com.atmk.base.http.model.HttpData
+import com.hjq.base.AbsBaseActivity
 import com.hjq.base.BaseVMFragment
 import com.hjq.http.listener.OnHttpListener
 import okhttp3.Call
@@ -13,7 +14,7 @@ import okhttp3.Call
  *    time   : 2018/10/18
  *    desc   : Fragment 业务基类
  */
-abstract class AppVMFragment<T : ViewBinding,A : AppVMActivity<*>> : BaseVMFragment<T,A>(),
+abstract class AppVMFragment<T : ViewBinding,A : AbsBaseActivity> : BaseVMFragment<T,A>(),
     ToastAction, OnHttpListener<Any> {
 
     /**
