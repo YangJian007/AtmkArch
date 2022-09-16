@@ -103,9 +103,7 @@ class LoginActivity : AppActivity(), KeyboardWatcher.SoftKeyboardStateListener,
         // 自动填充手机号和密码
         usernameView?.setText(getString(INTENT_KEY_IN_USERNAME))
         passwordView?.setText(getString(INTENT_KEY_IN_PASSWORD))
-//        usernameView?.setText("yangjian")
-//        passwordView?.setText("YAJyaj381")
-        UpdateUtil.getAndUpdate(this, "53")
+//        UpdateUtil.getAndUpdate(this, "53")
     }
 
 
