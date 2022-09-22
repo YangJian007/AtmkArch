@@ -13,6 +13,7 @@ import com.atmk.base.app.TitleBarVMFragment
 import com.atmk.iot.bz_statistic.R
 import com.atmk.iot.bz_statistic.databinding.FragmentStaticticsBinding
 import com.atmk.iot.bz_statistics.mvvm.v.MVVMActivity
+import com.atmk.iot.bz_statistics.room.v.RoomActivity
 import com.hjq.base.AbsBaseActivity
 
 /**
@@ -41,6 +42,10 @@ class StatisticsFragment : TitleBarVMFragment<FragmentStaticticsBinding,AbsBaseA
         mViewBinding?.let {
             it.btn.setOnClickListener {
                 startActivity(Intent(requireActivity(), MVVMActivity::class.java))
+            }
+
+            it.btn1.setOnClickListener {
+                startActivity(Intent(requireActivity(), RoomActivity::class.java))
             }
         }
     }

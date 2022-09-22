@@ -15,5 +15,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="mvvm示例Demo" />
+  <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="room" />
 
 </LinearLayout>

@@ -24,5 +24,11 @@
         android:layout_margin="@dimen/dp_20"
         android:text="异常测试" />
 
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"/>
+
 
 </LinearLayout>
