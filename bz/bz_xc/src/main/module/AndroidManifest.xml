@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.atmk.xc">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--声明后台定位权限-->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+
+    <application
+        android:name="com.atmk.xc.XCApplication"
+        android:label="巡查模块"
+        android:icon="@mipmap/xc_ic_launcher"
+        android:supportsRtl="false"
+        android:allowBackup="false"
+        android:theme="@style/base_AppTheme"
+        tools:replace="android:allowBackup,android:label,android:supportsRtl,android:theme,android:icon">
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="012b14a5442ffdb69faba51d34711bd3" />
+
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <!-- 巡查页 -->
+        <activity
+        android:name=".patrolmap.v.PatrolMapActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/base_AppTheme"
+        android:windowSoftInputMode="adjustResize|stateHidden">
+            <!-- 程序入口 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+    </application>
+
+</manifest>

@@ -1,11 +1,25 @@
 apply plugin: 'com.android.library'
+apply plugin: 'dagger.hilt.android.plugin'
 apply from: '../../common.gradle'
 
 
+android {
+
+    //资源命名加前缀
+    resourcePrefix "copy_"
+}
 
 
 dependencies {
-    implementation project(':bz:bz_base')
+    //region 固有声明
+    implementation "com.google.dagger:hilt-android:2.35"
+    kapt "com.google.dagger:hilt-android-compiler:2.35"
     kapt 'com.alibaba:arouter-compiler:1.5.2'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation project(':bz:bz_base')
+    //endregion
+
+    //region 个性化声明
+
+    //endregion
 }
